@@ -2,7 +2,7 @@
   
 [![volverjs](public/logo.svg)](https://github.com/alessandrobellesia/gdg-2022-having-fun-with-web-workers)
 
-## Having Fun with Web Workers
+## Having Fun with Web Workers!
 
 ### GDG Triveneto 2022
 
