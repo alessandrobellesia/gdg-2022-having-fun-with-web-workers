@@ -1,6 +1,6 @@
 <div align="center">
   
-[![volverjs](public/logo.svg)](https://github.com/alessandrobellesia/gdg-2022-having-fun-with-web-workers)
+[![gdg-2022-having-fun-with-web-workers](public/logo.svg)](https://github.com/alessandrobellesia/gdg-2022-having-fun-with-web-workers)
 
 ## Having Fun with Web Workers!
 
