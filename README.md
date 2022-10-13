@@ -4,7 +4,7 @@
 
 ## Having Fun with Web Workers!
 
-### GDG Triveneto 2022
+### [GDG DevFest Triveneto 2022](https://gdg.community.dev/events/details/google-gdg-trento-presents-devfest-triveneto-2022/)
 
 `web-worker` `vue` `vite` `blurhash` `pico`
 
