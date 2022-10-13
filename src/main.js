@@ -1,5 +1,17 @@
 import { createApp } from 'vue'
-import './style.css'
+import { createRouter, createWebHashHistory } from 'vue-router'
+import '@picocss/pico'
+import particles from 'vue3-particles'
+import './style.scss'
 import App from './App.vue'
+import routes from './routes.js'
 
-createApp(App).mount('#app')
+const router = createRouter({
+	history: createWebHashHistory(),
+	routes,
+})
+const app = createApp(App)
+
+app.use(router)
+app.use(particles)
+app.mount('#app')
