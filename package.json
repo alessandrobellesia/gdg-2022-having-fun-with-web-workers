@@ -1,8 +1,32 @@
 {
-  "name": "vite-vue-starter",
+  "name": "gdg-2022-having-fun-with-web-workers",
+  "description": "Simple project to explain how to use web workers with blurhash",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
+  "author": {
+    "name": "Alessandro Bellesia",
+    "url": "https://24consulting.it"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alessandrobellesia/gdg-2022-having-fun-with-web-workers/issues"
+  },
+  "homepage": "https://github.com/alessandrobellesia/gdg-2022-having-fun-with-web-workers#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alessandrobellesia/gdg-2022-having-fun-with-web-workers"
+  },
+  "keywords": [
+    "web-worker",
+    "vue",
+    "vite",
+    "blurhash",
+    "pico"
+  ],
+  "engines": {
+    "node": ">= 16.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

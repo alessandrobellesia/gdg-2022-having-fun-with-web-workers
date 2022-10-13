@@ -6,7 +6,7 @@
 
 ### GDG Triveneto 2022
 
-`web-workers` `vue` `vite` `blurhash` `pico`
+`web-worker` `vue` `vite` `blurhash` `pico`
 
 <br>
 
@@ -20,11 +20,22 @@
 
 </div>
 
-### Getting Started
+### Project setup
 
 ```
-npm install
-npm run dev
+$ npm install
+```
+
+### Compiles for development
+
+```
+$ npm run dev
+```
+
+### Compiles for production
+
+```
+$ npm run build
 ```
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/vitejs-vite-jm6vks)
