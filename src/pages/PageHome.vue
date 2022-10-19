@@ -1,5 +1,5 @@
 <script setup>
-	import { ref, nextTick } from 'vue'
+	import { ref, reactive, nextTick, watch } from 'vue'
 	import ImagePreview from '../components/ImagePreview.vue'
 	import {
 		loadImage,
@@ -23,6 +23,7 @@
 	const workerEnabled = ref(false)
 	const optimizationEnabled = ref(false)
 	const time = ref('')
+	const timeStack = reactive([])
 
 	let startTimestamp = undefined
 
@@ -45,6 +46,7 @@
 		if (src.value) {
 			URL.revokeObjectURL(src.value)
 		}
+
 		src.value = ''
 		hash.value = ''
 		pixels.value = undefined
@@ -52,19 +54,23 @@
 		height.value = undefined
 		loading.value = false
 		time.value = ''
+		timeStack.splice(0)
+
 		if (event) {
 			form.value.reset()
 		}
 	}
 
 	const onChange = async (event) => {
-		const file = event.target.files[0]
+		if (event) {
+			const file = event.target.files[0]
 
-		// reset
-		onClickReset()
+			// reset
+			onClickReset()
 
-		// set new URL
-		src.value = URL.createObjectURL(file)
+			// set new URL
+			src.value = URL.createObjectURL(file)
+		}
 
 		// start loader
 		loading.value = true
@@ -96,6 +102,10 @@
 			hash.value = await encode(imageData, width.value, height.value)
 			pixels.value = await decode(hash.value, width.value, height.value)
 
+			if (time.value) {
+				timeStack.unshift(time.value)
+			}
+
 			time.value = ((performance.now() - startTimestamp) / 1000).toFixed(
 				2,
 			)
@@ -104,6 +114,12 @@
 			loading.value = false
 		})
 	}
+
+	watch([workerEnabled, optimizationEnabled], () => {
+		if (src.value) {
+			onChange()
+		}
+	})
 </script>
 
 <template>
@@ -159,6 +175,9 @@
 		<span class="time__value">{{ time }}</span>
 		<template v-if="time">s</template>
 	</div>
+	<ul v-if="timeStack.length" class="time-stack">
+		<li v-for="item in timeStack" :key="item">{{ item }}s</li>
+	</ul>
 </template>
 
 <style lang="scss">
@@ -215,6 +234,19 @@
 		&__value {
 			font-size: 2rem;
 			font-weight: bold;
+		}
+
+		&-stack {
+			list-style: none;
+			display: flex;
+			padding: 0;
+			margin: 0;
+			justify-content: center;
+			gap: 1rem;
+
+			& > li {
+				list-style: none;
+			}
 		}
 	}
 
