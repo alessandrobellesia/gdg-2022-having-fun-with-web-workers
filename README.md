@@ -38,4 +38,6 @@ $ npm run dev
 $ npm run build
 ```
 
+[View the slides 🎉](https://slides.com/alessandrobellesia/web-workers)
+
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/vitejs-vite-jm6vks)
