@@ -40,4 +40,4 @@ $ npm run build
 
 [View the slides 🎉](https://slides.com/alessandrobellesia/web-workers)
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/vitejs-vite-jm6vks)
+[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/having-fun-with-web-workers)
